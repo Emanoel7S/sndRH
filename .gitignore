@@ -5,7 +5,6 @@
 /public/anexos/*
 /public/imagens/*
 /storage/*.key
-/config/database.php
 /config/mail.php
 .env
 .env.backup
