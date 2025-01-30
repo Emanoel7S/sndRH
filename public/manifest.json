@@ -1,0 +1,17 @@
+{
+    "name": "Sonoda Cliente RH",
+    "short_name": "SND-RH",
+    "start_url": "/index.php",
+    "background_color": "#6777ef",
+    "description": "Sonoda Cliente RH",
+    "display": "fullscreen",
+    "theme_color": "#6777ef",
+    "icons": [
+        {
+            "src": "assets/img/favicon.png",
+            "sizes": "72x78",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
