@@ -53,7 +53,7 @@
 
                     <div class="form-group">
                         <label for="job_title">Cargo:</label>
-                        <select name="job_title" id="job_title" class="form-control" required>
+                        <select name="job_title" id="job_title" class="form-control">
                         <option value="">Selecione um Cargo</option>
                         <!-- As opções de cargo serão preenchidas dinamicamente aqui -->
                         </select>
