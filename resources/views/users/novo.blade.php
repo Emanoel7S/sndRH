@@ -75,6 +75,17 @@
                             </div>
                         @endforeach
                     </div>
+                    <div class="form-group">
+                        <h3>Empresas</h3>
+                        <select name="comp_id" id="comp_id" class="form-control" required>
+                            <option value="">Selecione uma Empresa</option>
+                            @foreach ($comps as $comp)
+                                <option value="{{ $comp->idComp }}" {{ old('comp_id') == $comp->idComp ? 'selected' : '' }}>
+                                    {{ $comp->xName }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
 
                     <a href="{{ url()->previous() }}" class="btn btn-secondary">Cancelar</a>
                     <button type="submit" class="btn btn-primary">Cadastrar</button>

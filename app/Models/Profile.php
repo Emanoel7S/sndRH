@@ -76,7 +76,7 @@ class Profile extends Model
 
 	/*  EMPRESA ID */
 	//Traz o Id da Empresa Selecionada
-	public function  idComp()
+	public static function  idComp()
 	{
 		$company=Profile::user(); //Codigo Administrativo
 
@@ -84,7 +84,7 @@ class Profile extends Model
 			$record=DB::table('view_user_profile')
 			->where(['idUser'=>Auth::id(),'idManager'=> $company->idManager])
 			->first();
-
+//            dd($record);
 			return($record->idComp);
 		}else{
 			echo '<meta http-equiv="refresh" content="0; URL='.asset('/').'"/>';

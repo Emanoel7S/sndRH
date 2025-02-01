@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\Auth\FuncionarioController;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,7 +47,7 @@ Route::controller(ConveniosController::class)->group(function () {
     Route::get('convenios/cancel/{id}', 'remove')->where('id','[0-9]+');
 });
 
-use App\Http\Controllers\UserController;
+
 
 Route::prefix('users')->group(function () {
     Route::get('/novo', [UserController::class, 'create'])->name('users.create'); // Exibe o formulário de cadastro
