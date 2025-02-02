@@ -90,34 +90,111 @@ use App\Http\Controllers\UtilsController;
                                                          style="font-size: 1.2rem;"></i></div>
                         Dashboard</a>
 
+
                     @if(UtilsController::getPerm(19))
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMyCall"
-                           aria-expanded="false"
-                           aria-controls="collapseMyCall">
-                            <div class="sb-nav-link-icon"><i class="bi bi-bookmark-heart"
-                                                             style="font-size: 1.2rem;"></i>
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCadastros"
+                        aria-expanded="false" aria-controls="collapseCadastros">
+                            <div class="sb-nav-link-icon">
+                                <i class="bi-journal-text" style="font-size: 1.2rem;"></i>
                             </div>
-                            Adiantamentos
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"
-                                                                      style="font-size: 1.2rem;"></i></div>
+                            Cadastros
+                            <div class="sb-sidenav-collapse-arrow">
+                                <i class="fas fa-angle-down" style="font-size: 1.2rem;"></i>
+                            </div>
                         </a>
-                        <div class="collapse" id="collapseMyCall" aria-labelledby="headingOne"
-                             data-parent="#sidenavAccordion">
+                        <div class="collapse" id="collapseCadastros" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link sub-nav-link" href="{{ url('adiantamentos/novo')}}">
-                                    <div class="sb-nav-link-icon"><i class="b-nav-link-icon bi bi-bookmark-heart-fill"
-                                                                     style="font-size: 1.2rem;"></i>
+
+
+                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsuarios"
+                                aria-expanded="false" aria-controls="collapseUsuarios">
+                                    <div class="sb-nav-link-icon">
+                                        <i class="bi bi-people" style="font-size: 1.2rem;"></i>
                                     </div>
-                                    Novo</a>
-                                <a class="nav-link sub-nav-link" href="{{ url('adiantamentos')}}">
-                                    <div class="sb-nav-link-icon"><i class="b-nav-link-icon bi bi-bookmark-check-fill"
-                                                                     style="font-size: 1.2rem;"></i>
+                                    Usuários
+                                    <div class="sb-sidenav-collapse-arrow">
+                                        <i class="fas fa-angle-down" style="font-size: 1.2rem;"></i>
                                     </div>
-                                    Lista</a>
+                                </a>
+                                <div class="collapse" id="collapseUsuarios" aria-labelledby="headingOne" data-parent="#collapseCadastros">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link sub-nav-link" href="{{ url('users/novo')}}">
+                                            <div class="sb-nav-link-icon">
+                                                <i class="b-nav-link-icon bi bi-person-plus-fill" style="font-size: 1.2rem;"></i>
+                                            </div>
+                                            Novo Usuário
+                                        </a>
+                                        <a class="nav-link sub-nav-link" href="{{ url('users')}}">
+                                            <div class="sb-nav-link-icon">
+                                                <i class="b-nav-link-icon bi bi-person-lines-fill" style="font-size: 1.2rem;"></i>
+                                            </div>
+                                            Lista de Usuários
+                                        </a>
+                                    </nav>
+                                </div>
+
+
+                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCargos"
+                                aria-expanded="false" aria-controls="collapseCargos">
+                                    <div class="sb-nav-link-icon">
+                                        <i class="bi bi-briefcase-fill" style="font-size: 1.2rem;"></i>
+                                    </div>
+                                    Cargos
+                                    <div class="sb-sidenav-collapse-arrow">
+                                        <i class="fas fa-angle-down" style="font-size: 1.2rem;"></i>
+                                    </div>
+                                </a>
+                                <div class="collapse" id="collapseCargos" aria-labelledby="headingOne" data-parent="#collapseCadastros">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link sub-nav-link" href="{{ url('cargos/novo')}}">
+                                            <div class="sb-nav-link-icon">
+                                                <i class="b-nav-link-icon bi bi-plus-square-fill" style="font-size: 1.2rem;"></i>
+                                            </div>
+                                            Novo Cargo
+                                        </a>
+                                        <a class="nav-link sub-nav-link" href="{{ url('cargos')}}">
+                                            <div class="sb-nav-link-icon">
+                                                <i class="b-nav-link-icon bi bi-list-task" style="font-size: 1.2rem;"></i>
+                                            </div>
+                                            Lista de Cargos
+                                        </a>
+                                    </nav>
+                                </div>
+
                             </nav>
                         </div>
-
                     @endif
+
+
+                    @if(UtilsController::getPerm(19))
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMyCall"
+                            aria-expanded="false" aria-controls="collapseMyCall">
+                                <div class="sb-nav-link-icon">
+                                    <i class="bi bi-bookmark-heart" style="font-size: 1.2rem;"></i>
+                                </div>
+                                Adiantamentos
+                                <div class="sb-sidenav-collapse-arrow">
+                                    <i class="fas fa-angle-down" style="font-size: 1.2rem;"></i>
+                                </div>
+                            </a>
+                            <div class="collapse" id="collapseMyCall" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link sub-nav-link" href="{{ url('adiantamentos/novo')}}">
+                                        <div class="sb-nav-link-icon">
+                                            <i class="b-nav-link-icon bi bi-bookmark-heart-fill" style="font-size: 1.2rem;"></i>
+                                        </div>
+                                        Novo
+                                    </a>
+                                    <a class="nav-link sub-nav-link" href="{{ url('adiantamentos')}}">
+                                        <div class="sb-nav-link-icon">
+                                            <i class="b-nav-link-icon bi bi-bookmark-check-fill" style="font-size: 1.2rem;"></i>
+                                        </div>
+                                        Lista
+                                    </a>
+                                </nav>
+                            </div>
+                    @endif
+
 
                     @if(UtilsController::getPerm(19))
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMyCall2"
@@ -176,27 +253,6 @@ use App\Http\Controllers\UtilsController;
                         </div>
                     @endif
 
-                    @if(UtilsController::getPerm(19))
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFuncionarios"
-                        aria-expanded="false"
-                        aria-controls="collapseFuncionarios">
-                            <div class="sb-nav-link-icon"><i class="bi bi-people" style="font-size: 1.2rem;"></i></div>
-                            Usuários
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down" style="font-size: 1.2rem;"></i></div>
-                        </a>
-                            <div class="collapse" id="collapseFuncionarios" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link sub-nav-link" href="{{ url('users/novo')}}">
-                                        <div class="sb-nav-link-icon"><i class="b-nav-link-icon bi bi-person-plus-fill" style="font-size: 1.2rem;"></i></div>
-                                        Novo
-                                    </a>
-                                    <a class="nav-link sub-nav-link" href="{{ url('users')}}">
-                                        <div class="sb-nav-link-icon"><i class="b-nav-link-icon bi bi-person-lines-fill" style="font-size: 1.2rem;"></i></div>
-                                        Lista
-                                    </a>
-                                </nav>
-                            </div>
-                    @endif
 
                     <a class="nav-link" href="{{ url('meuperfil') }}">
 
