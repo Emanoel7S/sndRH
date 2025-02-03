@@ -49,12 +49,24 @@ Route::controller(ConveniosController::class)->group(function () {
 
 
 
+//Rotas usuario
 Route::prefix('users')->group(function () {
     Route::get('/novo', [UserController::class, 'create'])->name('users.create'); // Exibe o formulário de cadastro
     Route::post('/store', [UserController::class, 'store'])->name('users.store'); // Processa o cadastro do usuário
     Route::get('/', [UserController::class, 'index'])->name('users.index'); // Lista os usuários cadastrados
     Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+});
+
+
+
+//Rotas cargo
+Route::prefix('cargos')->group(function () {
+    Route::get('/novo', [CargoController::class, 'create'])->name('cargo.create'); // Exibe o formulário de cadastro
+    Route::post('/store', [CargoController::class, 'store'])->name('cargos.store'); // Processa o cadastro do cargos
+    Route::get('/', [CargoController::class, 'index'])->name('cargos.index'); // Lista os cargos cadastrados
+    Route::get('/cargos/{id}/edit', [CargoController::class, 'edit'])->name('cargos.edit');
+    Route::delete('/cargos/{id}', [CargoController::class, 'destroy'])->name('cargos.destroy');
 });
 
 
