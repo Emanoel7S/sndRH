@@ -105,6 +105,32 @@ use App\Http\Controllers\UtilsController;
                         <div class="collapse" id="collapseCadastros" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
 
+                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmpresas"
+                                aria-expanded="false" aria-controls="collapseEmpresas">
+                                    <div class="sb-nav-link-icon">
+                                        <i class="bi bi-building" style="font-size: 1.2rem;"></i>
+                                    </div>
+                                    Empresas
+                                    <div class="sb-sidenav-collapse-arrow">
+                                        <i class="fas fa-angle-down" style="font-size: 1.2rem;"></i>
+                                    </div>
+                                </a>
+                                <div class="collapse" id="collapseEmpresas" aria-labelledby="headingOne" data-parent="#collapseCadastros">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link sub-nav-link" href="{{ url('empresas/novo') }}">
+                                            <div class="sb-nav-link-icon">
+                                                <i class="bi bi-plus-circle" style="font-size: 1.2rem;"></i>
+                                            </div>
+                                            Nova Empresa
+                                        </a>
+                                        <a class="nav-link sub-nav-link" href="{{ url('empresas') }}">
+                                            <div class="sb-nav-link-icon">
+                                                <i class="bi bi-list-ul" style="font-size: 1.2rem;"></i>
+                                            </div>
+                                            Lista de Empresas
+                                        </a>
+                                    </nav>
+                                </div>
 
                                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsuarios"
                                 aria-expanded="false" aria-controls="collapseUsuarios">

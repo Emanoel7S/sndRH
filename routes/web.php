@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\Auth\FuncionarioController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EmpresasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,6 +71,12 @@ Route::prefix('cargos')->group(function () {
 });
 
 
+//Rotas empresa
+Route::get('/empresas', [EmpresasController::class, 'index'])->name('empresas.index');
+Route::get('/empresas/novo', [EmpresasController::class, 'create'])->name('empresas.novo');
+Route::get('/empresas/{idComp}/editar', [EmpresasController::class, 'edit'])->name('empresas.edit'); // Rota de edição
+Route::post('/empresas', [EmpresasController::class, 'store'])->name('empresas.store');
+Route::delete('/empresas/{idComp}', [EmpresasController::class, 'destroy'])->name('empresas.destroy');
 
 
 Route::get('check', 'FeriasController@autoCheck');
